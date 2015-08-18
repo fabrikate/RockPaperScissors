@@ -6,12 +6,12 @@ body {
 }
 
 img {
-	height: 200px;
-	width: 200px;
+	height: 300px;
+	width: 300px;
 	float: left;
 	border: solid 5px #DC3522;
 	border-radius: 20px;
-	margin: 0px 12px;
+	margin: 0px 30px;
 }
 
 img:hover {
@@ -45,6 +45,7 @@ h1 {
 }
 
 #counter {
+	width: 30%;
 	font-size: 32px;
 	margin-right: 140px;
 	color: #DC3522;
@@ -57,7 +58,7 @@ h1 {
 }
 
 section:not(#counter) {
-	width: 50%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	color: #DC3522;
@@ -73,6 +74,6 @@ button {
 	font-family: sans-serif;
 	font-size: 18px;
 	color: #D9CB9E;
-	margin-left: 290px;
+	margin-left: 490px;
 	margin-top: 5px;
 }

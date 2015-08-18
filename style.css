@@ -28,7 +28,7 @@ ul, li {
 ul {
 	margin-left: 140px;
 	width: 40%;
-	border: 5px solid black;
+	border: 7px solid black;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
@@ -37,7 +37,7 @@ h1 {
 	width: 80%;
 	color: #DC3522;
 	background-color: #374140;
-	border: 5px solid black;
+	border: 7px solid black;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -51,7 +51,7 @@ h1 {
 	color: #DC3522;
 	float: right;
 	background-color: #374140;
-	border: 5px solid black;
+	border: 7px solid black;
 	border-radius: 30px;
 	padding: 8px 8px;
 	text-align: center;
@@ -63,7 +63,7 @@ section:not(#counter) {
 	margin-right: auto;
 	color: #DC3522;
 	background-color: #374140;
-	border: 5px solid black;
+	border: 7px solid black;
 	border-radius: 30px;
 	padding: 8px 8px;
 	overflow: auto;
@@ -76,4 +76,8 @@ button {
 	color: #D9CB9E;
 	margin-left: 490px;
 	margin-top: 5px;
+}
+
+button:hover {
+	color:#DC3522;
 }

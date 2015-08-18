@@ -26,6 +26,7 @@ function computerPick() {
 	return computer;
 }
 
+// compare the two picks and updat the winner
 function comparePicks(person, comp) {
 	if (person === comp) {
 		computerScore++
@@ -60,6 +61,7 @@ function comparePicks(person, comp) {
 	}
 }
 
+//add a resetButton to reset the scores
 function resetButton() {
 	var button = document.createElement('button');
 	button.innerHTML= 'Reset Scores'

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rock, Paper, Scissors</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Rock, Paper, Scissors</h1>
+
+	<section id='counter'>Score: <br> You - <span id='playerScore'>0</span> <br> Computer - <span id='compScore'>0</span></section>
+
+	<ul> Rules
+		<li>Pick either Rock, Paper or Scissors</li>
+		<li>Rock smashes Scissors</li>
+		<li>Paper covers Rock</li>
+		<li>Scissors cut paper</li>
+		<li>A tie is considered a loss</li>
+	</ul>
+
+	<section id='playAction'>
+		<p id="playerPick">Player chooses: <span id="displayPlayerPick"></span> </p>
+		<p id='computerPick'>Computer picks: <span id="displayComputerPick"></span> </p>
+
+		<div id="rock">
+			<img src="https://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg" data-name='Rock' alt='rock' />
+		</div>
+
+		<div id='paper'>
+			<img src="http://www.designboom.com/wp-content/uploads/2013/05/paper-LED-torch-light-designboom03.jpg" data-name='Paper' alt='paper' />
+		</div>
+
+		<div id='scissors'>
+			<img src="https://librarylostfoundblog.files.wordpress.com/2013/06/scissors.jpg" data-name='Scissors' alt='scissors' />
+		</div>
+	</section>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

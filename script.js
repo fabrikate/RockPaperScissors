@@ -1,78 +1,84 @@
-var picks = ['Rock', 'Paper', 'Scissors'];
-var playerScore = 0;
-var computerScore = 0;
-var computerScoreEl = document.getElementById('compScore');
-var playerScoreEl = document.getElementById('playerScore');
+$(document).ready(function() {
+	var picks = ['Rock', 'Paper', 'Scissors'];
+	var playerScore = 0;
+	var computerScore = 0;
+	var $computerScoreEl = $('#compScore');
+	var $playerScoreEl = $('#playerScore');
 
 
-// player makes a choice
-function playerPick() {
-	var img = document.querySelectorAll('img');
-	for(var i = 0; i < img.length; i++) {
-		img[i].addEventListener('click', function(e) {
-			player = e.target.dataset.name;
-			document.getElementById('displayPlayerPick').innerHTML = player;
-			computer = computerPick();
-			comparePicks(player, computer);
-		})
+	// player makes a choice
+	function playerPick() {
+		var img = document.querySelectorAll('img');
+		for(var i = 0; i < img.length; i++) {
+			img[i].addEventListener('click', function(e) {
+				player = e.target.dataset.name;
+				document.getElementById('displayPlayerPick').innerHTML = player;
+				computer = computerPick();
+				comparePicks(player, computer);
+			})
+		}
 	}
-}
 
-playerPick();
+	playerPick();
 
-// computer makes a random choice
-function computerPick() {
-	var randomNum = Math.floor(Math.random() * (picks.length));
-	document.getElementById('displayComputerPick').innerHTML = picks[randomNum];
-	computer = picks[randomNum];
-	return computer;
-}
+	// computer makes a random choice
+	function computerPick() {
+		var randomNum = Math.floor(Math.random() * (picks.length));
+		document.getElementById('displayComputerPick').innerHTML = picks[randomNum];
+		computer = picks[randomNum];
+		return computer;
+	}
 
-// compare the two picks and updat the winner
-function comparePicks(person, comp) {
-	if (person === comp) {
-		document.getElementById('tie').innerHTML = 'Tie!';
-	}
-	else if (person === 'Rock' && comp === 'Scissors') {
-		playerScore ++;
-		playerScoreEl.innerHTML = playerScore;
-	}
-	else if (person === 'Rock' && comp === 'Paper') {
-		computerScore++;
-		computerScoreEl.innerHTML = computerScore;
-	}
-	else if (person === 'Paper' && comp === 'Rock') {
-		playerScore ++;
-		playerScoreEl.innerHTML = playerScore;
-	}
-	else if (person ==='Paper' && comp ==='Scissors') {
-		computerScore++;
-		computerScoreEl.innerHTML = computerScore;
-	}
-	else if (person === 'Scissors' && comp === 'Rock') {
-		playerScore ++;
-		playerScoreEl.innerHTML = playerScore;
-	}
-	else if ( person === 'Scissors' && comp === 'Paper') {
-		computerScore++;
-		computerScoreEl.innerHTML = computerScore;
-	}
-	else {
-		console.log('Something is wrong');
-	}
-};
+	// compare the two picks and updat the winner
+	function comparePicks(person, comp) {
+		if (person === comp) {
+			$('#tie').html('Tie!');
+			$('#tie').fadeOut(2000);
+		}
+		else if (person === 'Rock' && comp === 'Scissors') {
+			playerScore ++;
+			$playerScoreEl.html(playerScore);
+		}
+		else if (person === 'Rock' && comp === 'Paper') {
+			computerScore++;
+			$computerScoreEl.html(computerScore);
+		}
+		else if (person === 'Paper' && comp === 'Rock') {
+			playerScore ++;
+			$playerScoreEl.html(playerScore);
+		}
+		else if (person ==='Paper' && comp ==='Scissors') {
+			computerScore++;
+			$computerScoreEl.html(computerScore);
+		}
+		else if (person === 'Scissors' && comp === 'Rock') {
+			playerScore ++;
+			$playerScoreEl.html(playerScore);
+		}
+		else if ( person === 'Scissors' && comp === 'Paper') {
+			computerScore++;
+			$computerScoreEl.html(computerScore);
+		}
+		else {
+			console.log('Something is wrong');
+		}
+	};
 
-//add a resetButton to reset the scores
-function resetButton() {
-	var button = document.createElement('button');
-	button.innerHTML= 'Reset Scores';
-	document.getElementById('playAction').appendChild(button);
-	button.addEventListener('click', function() {
-		computerScore = 0;
-		computerScoreEl.innerHTML = computerScore;
-		playerScore = 0;
-		playerScoreEl.innerHTML = playerScore;
-	})
-}
+	//add a resetButton to reset the scores
 
-resetButton();
+	// need to add a button in jQ
+	function resetButton() {
+		var button = $('button');
+		button.html('Reset Scores');
+		$('#playAction').append(button);
+		$('#playAction').on('click', 'button', function() {
+			computerScore = 0;
+			$computerScoreEl.html(computerScore);
+			playerScore = 0;
+			$playerScoreEl.html(playerScore);
+		});
+	}
+
+	resetButton();
+})
+

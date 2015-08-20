@@ -8,15 +8,12 @@ $(document).ready(function() {
 
 	// player makes a choice
 	function playerPick() {
-		var img = document.querySelectorAll('img');
-		for(var i = 0; i < img.length; i++) {
-			img[i].addEventListener('click', function(e) {
-				player = e.target.dataset.name;
-				document.getElementById('displayPlayerPick').innerHTML = player;
-				computer = computerPick();
-				comparePicks(player, computer);
-			})
-		}
+		$('#playAction').on('click', 'img', function(e) {
+			player = e.target.dataset.name;
+			$('#displayPlayerPick').html(player);
+			computer = computerPick();
+			comparePicks(player, computer);
+		})
 	}
 
 	playerPick();
@@ -24,7 +21,7 @@ $(document).ready(function() {
 	// computer makes a random choice
 	function computerPick() {
 		var randomNum = Math.floor(Math.random() * (picks.length));
-		document.getElementById('displayComputerPick').innerHTML = picks[randomNum];
+		$('#displayComputerPick').html(picks[randomNum]);
 		computer = picks[randomNum];
 		return computer;
 	}
@@ -70,7 +67,6 @@ $(document).ready(function() {
 	function resetButton() {
 		var button = $('button');
 		button.html('Reset Scores');
-		$('#playAction').append(button);
 		$('#playAction').on('click', 'button', function() {
 			computerScore = 0;
 			$computerScoreEl.html(computerScore);
